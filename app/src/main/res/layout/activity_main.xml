@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="richard.ztesoft.com.segmentcontrol.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/video_manager_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_layout_height"
+        android:background="@color/title_layout_background">
+        <ImageButton
+            android:id="@+id/video_manager_back_btn"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="@dimen/back_button_height"
+            android:background="@color/title_layout_background"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/back_button_margin_left"
+            android:scaleType="fitCenter"
+            android:layout_centerVertical="true"
+            android:src="@drawable/video_manager_back_btn"
+            android:contentDescription="" />
+
+        <info.hoang8f.android.segmented.SegmentedGroup
+            android:id="@+id/video_segments"
+            android:layout_width="@dimen/segment_group_width"
+            android:layout_height="@dimen/segment_group_height"
+            android:layout_margin="@dimen/segment_group_margin"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            segmentedgroup:sc_border_width="@dimen/segment_group_border_width"
+            segmentedgroup:sc_corner_radius="@dimen/segment_group_corner_radius"
+            segmentedgroup:sc_tint_color="@color/white"
+            segmentedgroup:sc_unchecked_tint_color="@color/radio_button_unselected_color"
+            segmentedgroup:sc_checked_text_color="@color/radio_button_unselected_color">
+
+            <RadioButton
+                android:id="@+id/button_search_video"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/radio_button_video_search_text"
+                style="@style/RadioButton" />
+
+            <RadioButton
+                android:id="@+id/button_download_manager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/radio_button_download_manager_text"
+                style="@style/RadioButton" />
+        </info.hoang8f.android.segmented.SegmentedGroup>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/video_manager_title_layout">
+
+    </FrameLayout>
+</RelativeLayout>
